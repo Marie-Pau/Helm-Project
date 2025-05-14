@@ -1,0 +1,12 @@
+ingress:
+  enabled: false
+
+service:
+  type: NodePort
+  port: 9898
+  nodePort: 30050
+
+podAnnotations:
+  prometheus.io/scrape: "true"
+  prometheus.io/port: "9898"
+  prometheus.io/path: "/metrics"

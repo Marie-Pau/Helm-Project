@@ -1,0 +1,19 @@
+alertmanager:
+  enabled: false
+
+kubeStateMetrics:
+  enabled: false
+
+nodeExporter:
+  enabled: false
+
+pushgateway:
+  enabled: false
+
+server:
+  enabled: true
+  service:
+    type: NodePort
+    nodePort: 30090
+  ingress:
+    enabled: false

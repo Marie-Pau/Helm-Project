@@ -1,0 +1,37 @@
+# Default values for kanban-tp.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+# These can be overridden by the user during installation
+
+
+image:
+  repository: wkrzywiec/kanban-ui
+  tag: k8s
+ports: 
+- containerPort: 80
+
+resources:
+  requests:
+    memory: "64Mi"
+    cpu: "250m"
+  limits:
+    memory: "128Mi"
+    cpu: "250m"
+
+
+# Enable or disable optional resources
+createConfigMap: false
+createPV: false
+createPVC: false
+
+
+service:
+  name: kanban-ui   
+  type: ClusterIP  # Change to NodePort for external access
+  port: 80       # Default port exposed by the service
+  targetPort: 80 # Default target port for the container
+
+# Set number of replicas (default: 1)
+replicas: 1
+
